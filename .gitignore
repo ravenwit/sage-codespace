@@ -1,0 +1,29 @@
+# SageMath pre-parsed & compiled artifacts
+*.sage.py
+*.sobj
+*.spyx
+*.c
+*.cpp
+*.so
+
+# Jupyter Notebook checkpoints & runtime state
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+.jupyter/
+
+# Python bytecode & virtual environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.uv/
+
+# OS, Editor & Codespaces clutter
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
