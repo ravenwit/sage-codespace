@@ -1,0 +1,16 @@
+{
+  "name": "SageMath (conda-forge)",
+  "image": "mambaorg/micromamba:latest",
+  "postCreateCommand": "micromamba create -y -n sage -c conda-forge sage jupyterlab ipykernel && micromamba run -n sage python -m ipykernel install --user --name sage --display-name \"SageMath\"",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  },
+  "remoteEnv": {
+    "PATH": "/opt/conda/envs/sage/bin:${localEnv:PATH}"
+  }
+}
