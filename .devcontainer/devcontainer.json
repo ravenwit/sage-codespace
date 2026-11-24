@@ -1,13 +1,26 @@
 {
-  "name": "SageMath (conda-forge)",
-  "image": "mambaorg/micromamba:latest",
-  "postCreateCommand": "micromamba create -y -n sage -c conda-forge git sage jupyterlab ipykernel && micromamba run -n sage python -m ipykernel install --user --name sage --display-name \"SageMath\"",
+  "name": "SageMath Complete Workspace",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/rocker-org/devcontainer-features/miniforge:2": {}
+  },
+  "postCreateCommand": "mamba create -y -n sage -c conda-forge sage jupyterlab ipykernel && mamba run -n sage python -m ipykernel install --user --name sage --display-name \"SageMath\"",
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter"
-      ]
+      ],
+      "settings": {
+        "git.path": "/usr/bin/git",
+        "python.defaultInterpreterPath": "/opt/conda/envs/sage/bin/python",
+        "files.associations": {
+          "*.sage": "python"
+        },
+        "jupyter.kernels.filter": []
+      }
     }
   },
   "remoteEnv": {
