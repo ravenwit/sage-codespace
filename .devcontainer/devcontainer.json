@@ -1,7 +1,7 @@
 {
   "name": "SageMath (conda-forge)",
   "image": "mambaorg/micromamba:latest",
-  "postCreateCommand": "micromamba create -y -n sage -c conda-forge sage jupyterlab ipykernel && micromamba run -n sage python -m ipykernel install --user --name sage --display-name \"SageMath\"",
+  "postCreateCommand": "micromamba create -y -n sage -c conda-forge git sage jupyterlab ipykernel && micromamba run -n sage python -m ipykernel install --user --name sage --display-name \"SageMath\"",
   "customizations": {
     "vscode": {
       "extensions": [
